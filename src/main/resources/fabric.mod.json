@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "badpacketfix",
+	"version": "${version}",
+	"name": "BadPacketFix",
+	"description": "Fix illegal packet arguments, that can cause severe lag and server crashes",
+	"authors": [
+		"Drex"
+	],
+	"license": "GPL-3.0-only",
+	"icon": "assets/badpacketfix/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.drex.badpacketfix.BadPacketFix"
+		],
+		"client": [
+			"me.drex.badpacketfix.BadPacketFixClient"
+		]
+	},
+	"mixins": [
+		"badpacketfix.mixins.json",
+		{
+			"config": "badpacketfix.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.24",
+		"java": ">=17"
+	}
+}
